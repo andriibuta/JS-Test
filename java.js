@@ -16,7 +16,6 @@ window.onload = function() {
   }
   body.appendChild(table);
   document.getElementById("n1").innerHTML = randomNum;
-  document.getElementById("n2").innerHTML = randomNum;
 };
 // window.onload = function() {
 //   var tbl = document.createElement("table");
