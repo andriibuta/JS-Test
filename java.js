@@ -1,22 +1,180 @@
-window.onload = function() {
-  var randomNum = Math.floor(Math.random() * 800 + 100);
-  var body = document.getElementsByTagName("body")[0];
-  var table = document.createElement("table");
-  var tblB = document.createElement("tbody");
-  table.appendChild(tblB);
-  for (var i = 0; i < 4; i++) {
-    var tr = document.createElement("tr");
-    tblB.appendChild(tr);
-
-    for (var j = 0; j < 4; j++) {
-      var td = document.createElement("td");
-      tr.appendChild(td);
-      td.setAttribute("id", "n1");
-    }
+var s = '<table border="0">';
+var id = "";
+for (var j = 1; j <= 1; j++) {
+  s += "<tr>";
+  for (var i = 1; i <= 1; i++) {
+    var id = "(" + i + ";" + j + ")";
+    s += '<td id="a1"' + id + '"></td>';
+    s += '<td id="a2"' + id + '"></td>';
+    s += '<td id="a3"' + id + '"></td>';
+    s += '<td id="a4"' + id + '"></td>';
   }
-  body.appendChild(table);
-  document.getElementById("n1").innerHTML = randomNum;
+  s += "</tr>";
+  s += "<tr>";
+  for (var i = 1; i <= 1; i++) {
+    var id = "(" + i + ";" + j + ")";
+    s += '<td id="b1"' + id + '"></td>';
+    s += '<td id="b2"' + id + '"></td>';
+    s += '<td id="b3"' + id + '"></td>';
+    s += '<td id="b4"' + id + '"></td>';
+  }
+  s += "</tr>";
+  s += "<tr>";
+  for (var i = 1; i <= 1; i++) {
+    var id = "(" + i + ";" + j + ")";
+    s += '<td id="c1"' + id + '"></td>';
+    s += '<td id="c2"' + id + '"></td>';
+    s += '<td id="c3"' + id + '"></td>';
+    s += '<td id="c4"' + id + '"></td>';
+  }
+  s += "</tr>";
+  s += "<tr>";
+  for (var i = 1; i <= 1; i++) {
+    var id = "(" + i + ";" + j + ")";
+    s += '<td id="d1"' + id + '"></td>';
+    s += '<td id="d2"' + id + '"></td>';
+    s += '<td id="d3"' + id + '"></td>';
+    s += '<td id="d4"' + id + '"></td>';
+  }
+  s += "</tr>";
+}
+s += "</table>";
+document.getElementById("table").innerHTML = s;
+document.getElementById("a1").innerHTML = Math.floor(Math.random() * 800 + 100);
+document.getElementById("a2").innerHTML = Math.floor(Math.random() * 800 + 100);
+document.getElementById("a3").innerHTML = Math.floor(Math.random() * 800 + 100);
+
+document.getElementById("b1").innerHTML = Math.floor(Math.random() * 800 + 100);
+document.getElementById("b2").innerHTML = Math.floor(Math.random() * 800 + 100);
+document.getElementById("b3").innerHTML = Math.floor(Math.random() * 800 + 100);
+
+document.getElementById("c1").innerHTML = Math.floor(Math.random() * 800 + 100);
+document.getElementById("c2").innerHTML = Math.floor(Math.random() * 800 + 100);
+document.getElementById("c3").innerHTML = Math.floor(Math.random() * 800 + 100);
+// Сумма строк
+document.getElementById("a4").innerHTML =
+  parseInt(document.getElementById("a1").innerHTML) +
+  parseInt(document.getElementById("a2").innerHTML) +
+  parseInt(document.getElementById("a3").innerHTML);
+document.getElementById("b4").innerHTML =
+  parseInt(document.getElementById("b1").innerHTML) +
+  parseInt(document.getElementById("b2").innerHTML) +
+  parseInt(document.getElementById("b3").innerHTML);
+document.getElementById("c4").innerHTML =
+  parseInt(document.getElementById("c1").innerHTML) +
+  parseInt(document.getElementById("c2").innerHTML) +
+  parseInt(document.getElementById("c3").innerHTML);
+// Среднее
+document.getElementById("d1").innerHTML = Math.round(
+  (parseInt(document.getElementById("a1").innerHTML) +
+    parseInt(document.getElementById("b1").innerHTML) +
+    parseInt(document.getElementById("c1").innerHTML)) /
+    3
+);
+document.getElementById("d2").innerHTML = Math.round(
+  (parseInt(document.getElementById("a2").innerHTML) +
+    parseInt(document.getElementById("b2").innerHTML) +
+    parseInt(document.getElementById("c2").innerHTML)) /
+    3
+);
+document.getElementById("d3").innerHTML = Math.round(
+  (parseInt(document.getElementById("a3").innerHTML) +
+    parseInt(document.getElementById("b3").innerHTML) +
+    parseInt(document.getElementById("c3").innerHTML)) /
+    3
+);
+document.getElementById("d4").innerHTML = Math.round(
+  (parseInt(document.getElementById("a4").innerHTML) +
+    parseInt(document.getElementById("b4").innerHTML) +
+    parseInt(document.getElementById("c4").innerHTML)) /
+    3
+);
+
+a1.onclick = function clkOne() {
+  document.getElementById("a1").innerHTML =
+    parseInt(document.getElementById("a1").innerHTML) + 1;
 };
+a2.onclick = function clkOne() {
+  document.getElementById("a2").innerHTML =
+    parseInt(document.getElementById("a2").innerHTML) + 1;
+};
+a3.onclick = function clkOne() {
+  document.getElementById("a3").innerHTML =
+    parseInt(document.getElementById("a3").innerHTML) + 1;
+};
+b1.onclick = function clkOne() {
+  document.getElementById("b1").innerHTML =
+    parseInt(document.getElementById("b1").innerHTML) + 1;
+};
+b2.onclick = function clkOne() {
+  document.getElementById("b2").innerHTML =
+    parseInt(document.getElementById("b2").innerHTML) + 1;
+};
+b3.onclick = function clkOne() {
+  document.getElementById("b3").innerHTML =
+    parseInt(document.getElementById("b3").innerHTML) + 1;
+};
+c1.onclick = function clkOne() {
+  document.getElementById("c1").innerHTML =
+    parseInt(document.getElementById("c1").innerHTML) + 1;
+};
+c2.onclick = function clkOne() {
+  document.getElementById("c2").innerHTML =
+    parseInt(document.getElementById("c2").innerHTML) + 1;
+};
+c3.onclick = function clkOne() {
+  document.getElementById("c3").innerHTML =
+    parseInt(document.getElementById("c3").innerHTML) + 1;
+};
+
+
+
+// a1.onclick = function() {
+//   a1.innerHTML = (parseInt(document.getElementById("a1").innerHTML) + 1;
+// };
+
+// var plusOne = document.getElementsByClassName("plusOne");
+// var i;
+// for (i = 0; i < plusOne.length; i++) {
+//   plusOne[i].onclick = function() {
+//     var changed = this.parentElement;
+//     changed.style.display = "plusOne + 1";
+//   };
+// }
+
+// !Вариант 2!
+// var table = document.createElement('table'), tr, td, row, cell;
+// for (row = 0; row < 4; row++) {
+//     tr = document.createElement('tr');
+//     for (cell = 0; cell < 4; cell++) {
+//         td = document.createElement('td');
+//         tr.appendChild(td);
+//         td.innerHTML = Math.floor(Math.random() * 800 + 100);
+//     }
+//     table.appendChild(tr);
+// }
+// document.getElementById('table').appendChild(table);
+
+// window.onload = function() {
+//   var randomNum = Math.floor(Math.random() * 800 + 100);
+//   var body = document.getElementsByTagName("body")[0];
+//   var table = document.createElement("table");
+//   var tblB = document.createElement("tbody");
+//   table.appendChild(tblB);
+//   for (var i = 0; i < 4; i++) {
+//     var tr = document.createElement("tr");
+//     tblB.appendChild(tr);
+
+//     for (var j = 0; j < 4; j++) {
+//       var td = document.createElement("td");
+//       tr.appendChild(td);
+//       td.setAttribute("id", "n1");
+//     }
+//   }
+//   body.appendChild(table);
+//   document.getElementById("n1").innerHTML = randomNum;
+// };
+
 // window.onload = function() {
 //   var tbl = document.createElement("table");
 //   var row1 = tbl.insertRow();
