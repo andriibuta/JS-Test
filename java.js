@@ -1,49 +1,70 @@
-function matrix(m, n) {
-  var table = document.createDocumentFragment();
+var matrix = [
+	{id: 11, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 12, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 13, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 14, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 21, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 22, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 23, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 24, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 31, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 32, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 33, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 34, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 41, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 42, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 43, value: Math.floor(Math.random() * 800 + 100)},
+	{id: 44, value: Math.floor(Math.random() * 800 + 100)},
+];
+console.log(matrix);
 
-  var arr = [];
-  var colMidl = [];
-  for (var j = 0; j < n; j++) {
-    colMidl[j] = 0;
-  }
 
-  for (var i = 0; i < m; i++) {
-    var tr = document.createElement('tr');
-    arr[i] = [];
-    var summM = 0;
 
-    for (var j = 0; j < n; j++) {
-      var td = document.createElement('td');
-      td.id = "Id-" + i + "-" + j;
-      td.innerHTML = arr[i][j] = getRandom();
-      tr.appendChild(td);
-       summM += arr[i][j]; //сумма каждой строки
-      colMidl[j] += Math.round(arr[i][j] / m);
-    }
 
-    tr.setAttribute("data-summ", " = "  + summM);
-    table.appendChild(tr);
-  }
+// function matrix(m, n) {
+//   var table = document.createDocumentFragment();
 
-  tr = document.createElement('tr');
-  for (var j = 0; j < n; j++) {
-    td = document.createElement('td');
-    td.innerHTML = "<b>" + colMidl[j] + "</b>";
-    tr.appendChild(td);
-  }
-  table.appendChild(tr);
+//   var arr = [];
+//   var colMidl = [];
+//   for (var j = 0; j < n; j++) {
+//     colMidl[j] = 0;
+//   }
+
+//   for (var i = 0; i < m; i++) {
+//     var tr = document.createElement('tr');
+//     arr[i] = [];
+//     var summM = 0;
+
+//     for (var j = 0; j < n; j++) {
+//       var td = document.createElement('td');
+//       td.id = "Id-" + i + "-" + j;
+//       td.innerHTML = arr[i][j] = getRandom();
+//       tr.appendChild(td);
+//        summM += arr[i][j]; //сумма каждой строки
+//       colMidl[j] += Math.round(arr[i][j] / m);
+//     }
+
+//     tr.setAttribute("data-summ", " = "  + summM);
+//     table.appendChild(tr);
+//   }
+
+//   tr = document.createElement('tr');
+//   for (var j = 0; j < n; j++) {
+//     td = document.createElement('td');
+//     td.innerHTML = "<b>" + colMidl[j] + "</b>";
+//     tr.appendChild(td);
+//   }
+//   table.appendChild(tr);
   
-  document.getElementById('table').appendChild(table);
+//   document.getElementById('table').appendChild(table);
 
-  function getRandom() {
-    var min = 100;
-    var max = 999;
-    return Math.round(Math.random() * (max - min)) + min;
-  }
-}
-matrix(4, 4);
-
-
+//   function getRandom() {
+//     var min = 100;
+//     var max = 999;
+//     return Math.round(Math.random() * (max - min)) + min;
+//   }
+// }
+// matrix(4, 4);
 
 
 // Вариант массива №1
