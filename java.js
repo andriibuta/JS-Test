@@ -1,3 +1,51 @@
+function matrix(m, n) {
+  var table = document.createDocumentFragment();
+
+  var arr = [];
+  var colMidl = [];
+  for (var j = 0; j < n; j++) {
+    colMidl[j] = 0;
+  }
+
+  for (var i = 0; i < m; i++) {
+    var tr = document.createElement('tr');
+    arr[i] = [];
+    var summM = 0;
+
+    for (var j = 0; j < n; j++) {
+      var td = document.createElement('td');
+      td.id = "Id-" + i + "-" + j;
+      td.innerHTML = arr[i][j] = getRandom();
+      tr.appendChild(td);
+       summM += arr[i][j]; //сумма каждой строки
+      colMidl[j] += Math.round(arr[i][j] / m);
+    }
+
+    tr.setAttribute("data-summ", " = "  + summM);
+    table.appendChild(tr);
+  }
+
+  tr = document.createElement('tr');
+  for (var j = 0; j < n; j++) {
+    td = document.createElement('td');
+    td.innerHTML = "<b>" + colMidl[j] + "</b>";
+    tr.appendChild(td);
+  }
+  table.appendChild(tr);
+  
+  document.getElementById('table').appendChild(table);
+
+  function getRandom() {
+    var min = 100;
+    var max = 999;
+    return Math.round(Math.random() * (max - min)) + min;
+  }
+}
+matrix(4, 4);
+
+
+
+
 // Вариант массива №1
 // var myMatrix = [
 // 	[{Math.floor(Math.random() * 800 + 100)}, {Math.floor(Math.random() * 800 + 100)}, {Math.floor(Math.random() * 800 + 100)}],
@@ -14,24 +62,19 @@
 
 // Вариант массива №2
 // function matrixArray(rows,columns){
-//   var arr = [];
+//   var myMatrix = [];
 //   for(var i=0; i<rows; i++){
-//     arr[i] = [];
+//     myMatrix[i] = [];
 //     for(var j=0; j<columns; j++){
-//       arr[i][j] = i+j+1;
+//       myMatrix[i][j] = Math.floor(Math.random() * 800 + 100);
+    	
+    	
 //     }
+
 //   }
-//   document.write(arr);
-// }
+//   console.log(myMatrix);
+//  }
 // var myMatrix = matrixArray(4,4);
-
-
-
-
-
-
-
-
 
 
 
