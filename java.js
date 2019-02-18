@@ -1,22 +1,26 @@
 var matrix = [
-	{id: 11, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 12, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 13, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 14, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 21, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 22, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 23, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 24, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 31, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 32, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 33, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 34, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 41, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 42, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 43, value: Math.floor(Math.random() * 800 + 100)},
-	{id: 44, value: Math.floor(Math.random() * 800 + 100)},
+	[{id: 11, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 12, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 13, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 14, value: Math.floor(Math.random() * 800 + 100)}],
+
+	[{id: 21, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 22, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 23, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 24, value: Math.floor(Math.random() * 800 + 100)}],
+
+	[{id: 31, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 32, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 33, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 34, value: Math.floor(Math.random() * 800 + 100)}],
+
+	[{id: 41, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 42, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 43, value: Math.floor(Math.random() * 800 + 100)},
+	 {id: 44, value: Math.floor(Math.random() * 800 + 100)}],
 ];
 console.log(matrix);
+
 
 
 
