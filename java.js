@@ -21,9 +21,48 @@ var matrix = [
 ];
 console.log(matrix);
 
+// Сумма
+var sumRow1 = matrix[0][0].value + matrix[0][1].value + matrix[0][2].value + matrix[0][3].value;
+var sumRow2 = matrix[1][0].value + matrix[1][1].value + matrix[1][2].value + matrix[1][3].value;
+var sumRow3 = matrix[2][0].value + matrix[2][1].value + matrix[2][2].value + matrix[2][3].value;
+var sumRow4 = matrix[3][0].value + matrix[3][1].value + matrix[3][2].value + matrix[3][3].value;
 
+console.log(sumRow1);
+console.log(sumRow2);
+console.log(sumRow3);
+console.log(sumRow4);
+// Среднее
+var sumColumn1 = matrix[0][0].value + matrix[1][0].value + matrix[2][0].value + matrix[3][0].value;
+var sumColumn2 = matrix[0][1].value + matrix[1][1].value + matrix[2][1].value + matrix[3][1].value;
+var sumColumn3 = matrix[0][2].value + matrix[1][2].value + matrix[2][2].value + matrix[3][2].value;
+var sumColumn4 = matrix[0][3].value + matrix[1][3].value + matrix[2][3].value + matrix[3][3].value;
+console.log(sumColumn1);
+console.log(sumColumn2);
+console.log(sumColumn3);
+console.log(sumColumn4);
 
+var avg1 = Math.round(sumColumn1 / 4);
+var avg2 = Math.round(sumColumn2 / 4);
+var avg3 = Math.round(sumColumn3 / 4);
+var avg4 = Math.round(sumColumn4 / 4);
 
+console.log(avg1);
+console.log(avg2);
+console.log(avg3);
+console.log(avg4);
+
+// Array.prototype.sum = function (prop) {
+//     var total = 0
+//     for ( var i = 0, _len = this.length; i < _len; i++ ) {
+//         total += this[i][prop]
+//     }
+//     return total
+// }
+
+// console.log(matrix[0].sum("value"))
+// console.log(matrix[1].sum("value"))
+// console.log(matrix[2].sum("value"))
+// console.log(matrix[3].sum("value"))
 
 // function matrix(m, n) {
 //   var table = document.createDocumentFragment();
