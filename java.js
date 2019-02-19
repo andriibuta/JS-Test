@@ -27,29 +27,55 @@ var sumRow2 = matrix[1][0].value + matrix[1][1].value + matrix[1][2].value + mat
 var sumRow3 = matrix[2][0].value + matrix[2][1].value + matrix[2][2].value + matrix[2][3].value;
 var sumRow4 = matrix[3][0].value + matrix[3][1].value + matrix[3][2].value + matrix[3][3].value;
 
-console.log(sumRow1);
-console.log(sumRow2);
-console.log(sumRow3);
-console.log(sumRow4);
+// console.log(sumRow1);
+// console.log(sumRow2);
+// console.log(sumRow3);
+// console.log(sumRow4);
 // Среднее
 var sumColumn1 = matrix[0][0].value + matrix[1][0].value + matrix[2][0].value + matrix[3][0].value;
 var sumColumn2 = matrix[0][1].value + matrix[1][1].value + matrix[2][1].value + matrix[3][1].value;
 var sumColumn3 = matrix[0][2].value + matrix[1][2].value + matrix[2][2].value + matrix[3][2].value;
 var sumColumn4 = matrix[0][3].value + matrix[1][3].value + matrix[2][3].value + matrix[3][3].value;
-console.log(sumColumn1);
-console.log(sumColumn2);
-console.log(sumColumn3);
-console.log(sumColumn4);
+// console.log(sumColumn1);
+// console.log(sumColumn2);
+// console.log(sumColumn3);
+// console.log(sumColumn4);
 
-var avg1 = Math.round(sumColumn1 / 4);
-var avg2 = Math.round(sumColumn2 / 4);
-var avg3 = Math.round(sumColumn3 / 4);
-var avg4 = Math.round(sumColumn4 / 4);
+var avg1 = Math.round(sumColumn1 / matrix.length);
+var avg2 = Math.round(sumColumn2 / matrix.length);
+var avg3 = Math.round(sumColumn3 / matrix.length);
+var avg4 = Math.round(sumColumn4 / matrix.length);
 
-console.log(avg1);
-console.log(avg2);
-console.log(avg3);
-console.log(avg4);
+// console.log(avg1);
+// console.log(avg2);
+// console.log(avg3);
+// console.log(avg4);
+
+var table = document.createElement('table');
+        table.setAttribute('border', '1');
+        table.setAttribute('color', '000');
+        table.setAttribute('width','500');
+        table.setAttribute('height', '300');
+
+var tbody = document.createElement('tbody');
+var tr = document.createElement('tr');
+	tbody.appendChild(tr);
+ for(var i = 0; i < 4; i++){
+            var tr = document.createElement('tr');
+                for (var j = 0; j < 4; j++) {
+                    var td = document.createElement('td');
+                    td.innerHTML = matrix.value;
+                    tr.appendChild(td);
+				}
+                tbody.appendChild(tr);
+        }
+        table.appendChild(tbody);
+        document.getElementById('table').appendChild(table);
+
+
+
+
+
 
 // Array.prototype.sum = function (prop) {
 //     var total = 0
