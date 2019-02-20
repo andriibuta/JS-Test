@@ -1,70 +1,51 @@
-var matrix = [
-	[{id: 11, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 12, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 13, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 14, value: Math.floor(Math.random() * 800 + 100)}],
+// var matrix = [
+// 	[{id: 11, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 12, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 13, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 14, value: Math.floor(Math.random() * 800 + 100)}],
 
-	[{id: 21, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 22, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 23, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 24, value: Math.floor(Math.random() * 800 + 100)}],
+// 	[{id: 21, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 22, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 23, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 24, value: Math.floor(Math.random() * 800 + 100)}],
 
-	[{id: 31, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 32, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 33, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 34, value: Math.floor(Math.random() * 800 + 100)}],
+// 	[{id: 31, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 32, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 33, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 34, value: Math.floor(Math.random() * 800 + 100)}],
 
-	[{id: 41, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 42, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 43, value: Math.floor(Math.random() * 800 + 100)},
-	 {id: 44, value: Math.floor(Math.random() * 800 + 100)}],
-];
+// 	[{id: 41, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 42, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 43, value: Math.floor(Math.random() * 800 + 100)},
+// 	 {id: 44, value: Math.floor(Math.random() * 800 + 100)}],
+// ];
+// console.log(matrix);
+var matrix = new Array(4);
+for(var i = 0; i < matrix.length; i++)
+	matrix[i] = new Array(4);
+
+for (var row = 0; row < matrix.length; row++) {
+	for(col = 0; col < matrix[row].length; col++) {
+		matrix[row][col] = Math.floor(Math.random() * 800 + 100);
+	}
+}
 console.log(matrix);
 
-// Сумма
-var sumRow1 = matrix[0][0].value + matrix[0][1].value + matrix[0][2].value + matrix[0][3].value;
-var sumRow2 = matrix[1][0].value + matrix[1][1].value + matrix[1][2].value + matrix[1][3].value;
-var sumRow3 = matrix[2][0].value + matrix[2][1].value + matrix[2][2].value + matrix[2][3].value;
-var sumRow4 = matrix[3][0].value + matrix[3][1].value + matrix[3][2].value + matrix[3][3].value;
+var sumRows = 0;
+for(var sum = 0; sum < matrix.length; sum++) {
+	sumRows += matrix[sum];
+}
 
-// console.log(sumRow1);
-// console.log(sumRow2);
-// console.log(sumRow3);
-// console.log(sumRow4);
-// Среднее
-var sumColumn1 = matrix[0][0].value + matrix[1][0].value + matrix[2][0].value + matrix[3][0].value;
-var sumColumn2 = matrix[0][1].value + matrix[1][1].value + matrix[2][1].value + matrix[3][1].value;
-var sumColumn3 = matrix[0][2].value + matrix[1][2].value + matrix[2][2].value + matrix[3][2].value;
-var sumColumn4 = matrix[0][3].value + matrix[1][3].value + matrix[2][3].value + matrix[3][3].value;
-// console.log(sumColumn1);
-// console.log(sumColumn2);
-// console.log(sumColumn3);
-// console.log(sumColumn4);
-
-var avg1 = Math.round(sumColumn1 / matrix.length);
-var avg2 = Math.round(sumColumn2 / matrix.length);
-var avg3 = Math.round(sumColumn3 / matrix.length);
-var avg4 = Math.round(sumColumn4 / matrix.length);
-
-// console.log(avg1);
-// console.log(avg2);
-// console.log(avg3);
-// console.log(avg4);
-
-var table = document.createElement('table');
-        table.setAttribute('border', '1');
-        table.setAttribute('color', '000');
-        table.setAttribute('width','500');
-        table.setAttribute('height', '300');
+var table = document.createElement('table');   
 
 var tbody = document.createElement('tbody');
 var tr = document.createElement('tr');
 	tbody.appendChild(tr);
  for(var i = 0; i < 4; i++){
             var tr = document.createElement('tr');
-                for (var j = 0; j < 4; j++) {
+                for (var j = 0; j < matrix.length; j++) {
                     var td = document.createElement('td');
-                    td.innerHTML = matrix.value;
+                    td.innerHTML = matrix[i][j];
                     tr.appendChild(td);
 				}
                 tbody.appendChild(tr);
@@ -73,7 +54,53 @@ var tr = document.createElement('tr');
         document.getElementById('table').appendChild(table);
 
 
+// Сумма
+// var sumRow1 = matrix[0][0].value + matrix[0][1].value + matrix[0][2].value + matrix[0][3].value;
+// var sumRow2 = matrix[1][0].value + matrix[1][1].value + matrix[1][2].value + matrix[1][3].value;
+// var sumRow3 = matrix[2][0].value + matrix[2][1].value + matrix[2][2].value + matrix[2][3].value;
+// var sumRow4 = matrix[3][0].value + matrix[3][1].value + matrix[3][2].value + matrix[3][3].value;
 
+// console.log(sumRow1);
+// console.log(sumRow2);
+// console.log(sumRow3);
+// console.log(sumRow4);
+// Среднее
+// var sumColumn1 = matrix[0][0].value + matrix[1][0].value + matrix[2][0].value + matrix[3][0].value;
+// var sumColumn2 = matrix[0][1].value + matrix[1][1].value + matrix[2][1].value + matrix[3][1].value;
+// var sumColumn3 = matrix[0][2].value + matrix[1][2].value + matrix[2][2].value + matrix[3][2].value;
+// var sumColumn4 = matrix[0][3].value + matrix[1][3].value + matrix[2][3].value + matrix[3][3].value;
+// console.log(sumColumn1);
+// console.log(sumColumn2);
+// console.log(sumColumn3);
+// console.log(sumColumn4);
+
+// var avg1 = Math.round(sumColumn1 / matrix.length);
+// var avg2 = Math.round(sumColumn2 / matrix.length);
+// var avg3 = Math.round(sumColumn3 / matrix.length);
+// var avg4 = Math.round(sumColumn4 / matrix.length);
+
+// console.log(avg1);
+// console.log(avg2);
+// console.log(avg3);
+// console.log(avsg4);
+
+
+
+// document.write("<table border='1' width='200'>")
+
+// for(var i=0; i<4;i++)
+// {
+// 	document.write("<tr><td>" + matrix[i][0].value + "</td><td>" + matrix[i][1].value + "</td><td>" + matrix[i][2].value + "</td><td>" + matrix[i][3].value + "</td></tr>");
+// }
+// for(var i=0; i<1;i++)
+// {
+// 	document.write("<tr><td>" + avg1 + "</td><td>" + avg2 + "</td><td>" + avg3 + "</td><td>" + avg4 + "</td></tr>");
+// }
+// for(var j=0; j<1;j++)
+// {
+// 	document.write();
+// }
+// document.write("</table>")
 
 
 
