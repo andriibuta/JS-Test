@@ -20,6 +20,7 @@
 // 	 {id: 44, value: Math.floor(Math.random() * 800 + 100)}],
 // ];
 // console.log(matrix);
+
 var matrix = new Array(4);
 for(var i = 0; i < matrix.length; i++)
 	matrix[i] = new Array(4);
@@ -37,11 +38,10 @@ for(var sum = 0; sum < matrix.length; sum++) {
 }
 
 var table = document.createElement('table');   
-
 var tbody = document.createElement('tbody');
 var tr = document.createElement('tr');
 	tbody.appendChild(tr);
- for(var i = 0; i < 4; i++){
+ for(var i = 0; i < matrix.length; i++){
             var tr = document.createElement('tr');
                 for (var j = 0; j < matrix.length; j++) {
                     var td = document.createElement('td');
