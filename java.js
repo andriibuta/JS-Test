@@ -21,21 +21,19 @@
 // ];
 // console.log(matrix);
 
-var matrix = new Array(4);
-for(var i = 0; i < matrix.length; i++)
-	matrix[i] = new Array(4);
 
-for (var row = 0; row < matrix.length; row++) {
-	for(col = 0; col < matrix[row].length; col++) {
-		matrix[row][col] = Math.floor(Math.random() * 800 + 100);
+var matrix = new Array(5);
+for(var i = 0; i < matrix.length; i++)
+	matrix[i] = new Array(5);
+
+for (var row = 0; row < matrix.length - 1; row++) {
+	for(col = 0; col < matrix[row].length - 1; col++) {
+		matrix[row][col] = Math.round(Math.random() * 800 + 100);
+		matrix[col][4] = matrix[col][0] + matrix[col][1] + matrix[col][2] + matrix[col][3];
+		matrix[4][row] = Math.round((matrix[0][row] + matrix[1][row] + matrix[2][row] + matrix[3][row]) / 4);
 	}
 }
 console.log(matrix);
-
-var sumRows = 0;
-for(var sum = 0; sum < matrix.length; sum++) {
-	sumRows += matrix[sum];
-}
 
 var table = document.createElement('table');   
 var tbody = document.createElement('tbody');
@@ -47,7 +45,7 @@ var tr = document.createElement('tr');
                     var td = document.createElement('td');
                     td.innerHTML = matrix[i][j];
                     tr.appendChild(td);
-				}
+                }
                 tbody.appendChild(tr);
         }
         table.appendChild(tbody);
