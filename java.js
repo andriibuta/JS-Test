@@ -1,3 +1,108 @@
+function matrix(m, n) {
+  var table = document.createDocumentFragment();
+
+  var arr = [];
+  var colAvg = [];
+  for (var j = 0; j < n; j++) {
+    colAvg[j] = 0;
+  }
+
+  for (var i = 0; i < m; i++) {
+    var tr = document.createElement('tr');
+    arr[i] = [];
+    var summM = 0;
+
+    for (var j = 0; j < n; j++) {
+      var td = document.createElement('td');
+      td.id = "unicId-" + i + "-" + j;
+      td.innerHTML = arr[i][j] = getRandom();
+      tr.appendChild(td);
+      summM += arr[i][j]; //сумма каждой строки
+      colAvg[j] += Math.round(arr[i][j] / colAvg.length);
+    }
+
+    tr.setAttribute("data-summ", " = " + summM);
+    table.appendChild(tr);
+  }
+
+  
+  tr = document.createElement('tr');
+  for (var j = 0; j < n; j++) {
+    td = document.createElement('td');
+    td.innerHTML = colAvg[j];
+    tr.appendChild(td);
+  }
+  table.appendChild(tr);
+  
+  document.getElementById('table').appendChild(table);
+
+  function getRandom() {
+    return Math.round(Math.random() * 800 + 100);
+  }
+}
+
+matrix(4, 4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // var matrix = [
 // 	[{id: 11, value: Math.floor(Math.random() * 800 + 100)},
 // 	 {id: 12, value: Math.floor(Math.random() * 800 + 100)},
@@ -21,37 +126,36 @@
 // ];
 // console.log(matrix);
 
+// var matrix = new Array(4);
+// for (var i = 0; i < matrix.length; i++)
+// 	matrix[i] = new Array(4);
 
-var matrix = new Array(5);
-for(var i = 0; i < matrix.length; i++)
-	matrix[i] = new Array(5);
-
-for (var row = 0; row < matrix.length - 1; row++) {
-	for(col = 0; col < matrix[row].length - 1; col++) {
-		matrix[row][col] = Math.round(Math.random() * 800 + 100);
-		matrix[col][4] = matrix[col][0] + matrix[col][1] + matrix[col][2] + matrix[col][3];
-		matrix[4][row] = Math.round((matrix[0][row] + matrix[1][row] + matrix[2][row] + matrix[3][row]) / 4);
-	}
-}
-console.log(matrix);
-
-var table = document.createElement('table');   
-var tbody = document.createElement('tbody');
-var tr = document.createElement('tr');
-	tbody.appendChild(tr);
- for(var i = 0; i < matrix.length; i++){
-            var tr = document.createElement('tr');
-                for (var j = 0; j < matrix.length; j++) {
-                    var td = document.createElement('td');
-                    td.innerHTML = matrix[i][j];
-                    tr.appendChild(td);
-                }
-                tbody.appendChild(tr);
-        }
-        table.appendChild(tbody);
-        document.getElementById('table').appendChild(table);
+// for (var row = 0; row < matrix.length; row++) {
+// 	for(col = 0; col < matrix[row].length; col++) {
+// 		matrix[row][col] = Math.round(Math.random() * 800 + 100);
+// 	}
+// }
+// console.log(matrix);
+		// matrix[col][0] + matrix[col][1] + matrix[col][2] + matrix[col][3];
+		// matrix[4][row] = Math.round((matrix[0][row] + matrix[1][row] + matrix[2][row] + matrix[3][row]) / 4);
 
 
+// var table = document.createElement('table');   
+// var tbody = document.createElement('tbody');
+// var tr = document.createElement('tr');
+// 	tbody.appendChild(tr);
+//  for (var i = 0; i < matrix.length; i++) {
+//             var tr = document.createElement('tr');
+//                 for (var j = 0; j < matrix.length; j++) {
+//                     var td = document.createElement('td');
+//                     td.innerHTML = matrix[i][j];
+//                     tr.appendChild(td);
+                   
+//                 }
+//                 tbody.appendChild(tr);
+//         }
+//         table.appendChild(tbody);
+//         document.getElementById('table').appendChild(table);
 // Сумма
 // var sumRow1 = matrix[0][0].value + matrix[0][1].value + matrix[0][2].value + matrix[0][3].value;
 // var sumRow2 = matrix[1][0].value + matrix[1][1].value + matrix[1][2].value + matrix[1][3].value;
