@@ -17,7 +17,7 @@ function matrix(m, n) {
       td.id = "unicId-" + i + "-" + j;
       td.innerHTML = arr[i][j] = getRandom();
       tr.appendChild(td);
-      summM += arr[i][j]; //сумма каждой строки
+      summM += arr[i][j];
       colAvg[j] += Math.round(arr[i][j] / colAvg.length);
     }
 
@@ -42,8 +42,6 @@ function matrix(m, n) {
 }
 
 matrix(4, 4);
-
-
 
 
 
