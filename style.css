@@ -1,11 +1,11 @@
 table td {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 14px;
-  border-radius: 10px;
+  
   border-spacing: 0;
   text-align: center;
   padding: 20px;
-  border: 0px solid white;
-  background-color: #005dff;
-  color: #f9f92a;
+  border: 1px solid black;
+  
+  
 }

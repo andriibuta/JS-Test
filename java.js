@@ -14,20 +14,29 @@ function matrix(m, n) {
 
     for (var j = 0; j < n; j++) {
       var td = document.createElement('td');
-      td.id = "unicId-" + i + "-" + j;
+      td.id = "Id-" + i + "-" + j;
       td.innerHTML = arr[i][j] = getRandom();
       tr.appendChild(td);
       summM += arr[i][j];
       colAvg[j] += Math.round(arr[i][j] / colAvg.length);
     }
-
-    tr.setAttribute("data-summ", " = " + summM);
+      for (var j = 0; j < 1 ; j++) {
+        td = document.createElement('td');
+        td.innerHTML = summM;
+        tr.appendChild(td);
+  }
+    // tr.setAttribute("sum", + summM);
+    // var atrbSum = tr.getAttribute("sum");
+    // td.innerHTML = summM;
     table.appendChild(tr);
+    console.log(tr);
   }
 
   
+    
+
   tr = document.createElement('tr');
-  for (var j = 0; j < n; j++) {
+  for (var j = 0; j < n ; j++) {
     td = document.createElement('td');
     td.innerHTML = colAvg[j];
     tr.appendChild(td);
@@ -38,6 +47,9 @@ function matrix(m, n) {
 
   function getRandom() {
     return Math.round(Math.random() * 800 + 100);
+  }
+  function clkOne() {
+    return  arr += 1;
   }
 }
 
