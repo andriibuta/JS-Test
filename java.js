@@ -15,6 +15,7 @@ function matrix(m, n) {
     for (var j = 0; j < n; j++) {
       var td = document.createElement('td');
       td.id = "Id-" + i + "-" + j;
+      td.className = "plusOne";
       td.innerHTML = arr[i][j] = getRandom();
       tr.appendChild(td);
       summM += arr[i][j];
@@ -24,16 +25,12 @@ function matrix(m, n) {
         td = document.createElement('td');
         td.innerHTML = summM;
         tr.appendChild(td);
+
   }
-    // tr.setAttribute("sum", + summM);
-    // var atrbSum = tr.getAttribute("sum");
-    // td.innerHTML = summM;
     table.appendChild(tr);
-    console.log(tr);
+    console.log(tr)
   }
 
-  
-    
 
   tr = document.createElement('tr');
   for (var j = 0; j < n ; j++) {
@@ -45,18 +42,30 @@ function matrix(m, n) {
   
   document.getElementById('table').appendChild(table);
 
+
+
+
   function getRandom() {
     return Math.round(Math.random() * 800 + 100);
   }
-  function clkOne() {
-    return  arr += 1;
+
+  document.getElementById('table').querySelectorAll('.plusOne').forEach(function(e) {
+  e.onclick = function() {
+    this.innerHTML++;
   }
+});
+
+  
+
+
 }
 
 matrix(4, 4);
 
 
-
+// a3.onclick = function clkOne() {
+//   document.getElementById("a3").innerHTML =
+//     parseInt(document.getElementById("a3").innerHTML) + 1;
 
 
 
