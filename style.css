@@ -1,11 +1,16 @@
 table td {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 14px;
-  
   border-spacing: 0;
   text-align: center;
   padding: 20px;
   border: 1px solid black;
-  
-  
+}
+.sumChange {
+	background: #0a55ce;
+	color: #ffffff;
+}
+.Avg {
+	background: #0a55ce;
+	color: #ffffff;
 }

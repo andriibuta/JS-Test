@@ -23,10 +23,12 @@ function matrix(m, n) {
     }
       for (var j = 0; j < 1 ; j++) {
         td = document.createElement('td');
+        td.className = "sumChange";
         td.innerHTML = summM;
         tr.appendChild(td);
 
   }
+    
     table.appendChild(tr);
     console.log(tr)
   }
@@ -35,37 +37,76 @@ function matrix(m, n) {
   tr = document.createElement('tr');
   for (var j = 0; j < n ; j++) {
     td = document.createElement('td');
+    td.className = "Avg";
     td.innerHTML = colAvg[j];
     tr.appendChild(td);
   }
+
   table.appendChild(tr);
+  console.log(tr)
   
   document.getElementById('table').appendChild(table);
 
-
+  
 
 
   function getRandom() {
-    return Math.round(Math.random() * 800 + 100);
+    return Math.round(Math.random() * 900 + 100);
   }
 
-  document.getElementById('table').querySelectorAll('.plusOne').forEach(function(e) {
-  e.onclick = function() {
-    this.innerHTML++;
-  }
-});
+  function addToCell(e) {
+    if(e.target.id){
+        var clickedRow = document.getElementById(e.target.id).closest('tr');
+        var clickedRowSum = clickedRow.getElementsByClassName('sumChange')[0];
+        clickedRowSum.innerHTML = parseInt(clickedRowSum.innerHTML) + 1;
+        e.target.innerHTML = parseInt(e.target.innerHTML) + 1;
+    }
+}
+var events = {
+    addCellHandler: function () {
+        var allTd = [...document.querySelectorAll('td')];
+        for(var i=0; i<allTd.length; i++){
+            allTd[i].addEventListener('click', addToCell)
+        }
+    }
+};
 
-  
+events.addCellHandler();
+
+// Плюсует единицу но не изменяется сумма и среднее.             
+  // var a = document.querySelectorAll('.plusOne');
+  // [].forEach.call( a, function(el) {
+  //    el.onclick = function(e) {
+  //       if (this.innerHTML++);
+  //    }
+  // });
+
+  // Не работает
+  // document.getElementById('table').querySelectorAll('.sumChange').forEach(function(s) {
+  //   s.onchange = function() {
+  //     if (document.querySelectorAll('.plusOne')++) {
+  //       document.getElementById('table').querySelectorAll('.plusOne').forEach(function(e) {
+  //         e.onclick = function() {
+  //           document.querySelectorAll('.plusOne').innerHTML++;
+  //         }
+  //       });
+  //     }
+  //   }
+  // });
+
+// Плюсует единицу но не изменяется сумма и среднее.             
+//   document.getElementById('table').querySelectorAll('.plusOne').forEach(function(e) {
+//   e.onclick = function() {
+//     this.innerHTML++; 
+//   }
+//   
+// });
 
 
 }
 
 matrix(4, 4);
 
-
-// a3.onclick = function clkOne() {
-//   document.getElementById("a3").innerHTML =
-//     parseInt(document.getElementById("a3").innerHTML) + 1;
 
 
 
