@@ -59,7 +59,7 @@ function matrix(m, n) {
         var clickedRow = document.getElementById(e.target.id).closest('tr');
         var clickedRowSum = clickedRow.getElementsByClassName('sumChange')[0];
         clickedRowSum.textContent++;
-        e.target.textContent = parseInt(e.target.textContent) + 1;
+        e.target.textContent++;// = parseInt(e.target.textContent) + 1;
     }
 }
 var events = {
