@@ -16,7 +16,7 @@ function matrix(m, n) {
       var td = document.createElement('td');
       td.id = "Id-" + i + "-" + j;
       td.className = "plusOne";
-      td.innerHTML = arr[i][j] = getRandom();
+      td.textContent = arr[i][j] = getRandom();
       tr.appendChild(td);
       summM += arr[i][j];
       colAvg[j] += Math.round(arr[i][j] / colAvg.length);
@@ -24,7 +24,7 @@ function matrix(m, n) {
       for (var j = 0; j < 1 ; j++) {
         td = document.createElement('td');
         td.className = "sumChange";
-        td.innerHTML = summM;
+        td.textContent = summM;
         tr.appendChild(td);
 
   }
@@ -38,7 +38,7 @@ function matrix(m, n) {
   for (var j = 0; j < n ; j++) {
     td = document.createElement('td');
     td.className = "Avg";
-    td.innerHTML = colAvg[j];
+    td.textContent = colAvg[j];
     tr.appendChild(td);
   }
 
@@ -58,8 +58,8 @@ function matrix(m, n) {
     if(e.target.id){
         var clickedRow = document.getElementById(e.target.id).closest('tr');
         var clickedRowSum = clickedRow.getElementsByClassName('sumChange')[0];
-        clickedRowSum.innerHTML++;
-        e.target.innerHTML = parseInt(e.target.innerHTML) + 1;
+        clickedRowSum.textContent++;
+        e.target.textContent = parseInt(e.target.textContent) + 1;
     }
 }
 var events = {
