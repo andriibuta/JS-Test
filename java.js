@@ -58,7 +58,7 @@ function matrix(m, n) {
     if(e.target.id){
         var clickedRow = document.getElementById(e.target.id).closest('tr');
         var clickedRowSum = clickedRow.getElementsByClassName('sumChange')[0];
-        clickedRowSum.innerHTML = parseInt(clickedRowSum.innerHTML) + 1;
+        clickedRowSum.innerHTML++;
         e.target.innerHTML = parseInt(e.target.innerHTML) + 1;
     }
 }
