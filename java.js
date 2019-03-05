@@ -26,7 +26,7 @@ function matrix(m, n) {
         td.className = "sumChange";
         td.textContent = summM;
         tr.appendChild(td);
-
+        arr[i].push(summM);
   }
     
     table.appendChild(tr);
@@ -43,37 +43,43 @@ function matrix(m, n) {
   }
 
   table.appendChild(tr);
+
   console.log(tr)
-  
+  console.log(arr)
+ 
+
   document.getElementById('table').appendChild(table);
-
-  
-
 
   function getRandom() {
     return Math.round(Math.random() * 900 + 100);
   }
 
-  function addToCell(e) {
-    if(e.target.id){
-        var clickedRow = document.getElementById(e.target.id).closest('tr');
-        var clickedRowSum = clickedRow.getElementsByClassName('sumChange')[0];
-        clickedRowSum.textContent++;
-        e.target.textContent++;// = parseInt(e.target.textContent) + 1;
-    }
-}
-var events = {
-    addCellHandler: function () {
-        var allTd = [...document.querySelectorAll('td')];
-        for(var i=0; i<allTd.length; i++){
-            allTd[i].addEventListener('click', addToCell)
-        }
-    }
-};
+  // function addToCell(e) {
+  //   this.arr.length++;
+  // }
 
-events.addCellHandler();
+// Работает (меняется только сумма)
+//   function addToCell(e) {
+//     if(e.target.id){
+//         var clickedRow = document.getElementById(e.target.id).closest('tr');
+//         var clickedRowSum = clickedRow.getElementsByClassName('sumChange')[0];
+//         clickedRowSum.textContent++;
+//         e.target.textContent++;// = parseInt(e.target.textContent) + 1;
+//     } 
+    
+// }
+// var events = {
+//     addCellHandler: function () {
+//         var allTd = [...document.querySelectorAll('td')];
+//         for(var i=0; i<allTd.length; i++){
+//             allTd[i].addEventListener('click', addToCell)
+//         }
+//     }
+// };
 
-// Плюсует единицу но не изменяется сумма и среднее.             
+// events.addCellHandler();
+
+//Плюсует единицу но не изменяется сумма и среднее.             
   // var a = document.querySelectorAll('.plusOne');
   // [].forEach.call( a, function(el) {
   //    el.onclick = function(e) {
@@ -99,7 +105,7 @@ events.addCellHandler();
 //   e.onclick = function() {
 //     this.innerHTML++; 
 //   }
-//   
+  
 // });
 
 
