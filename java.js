@@ -40,19 +40,31 @@ function matrix(m, n) {
     td.className = "Avg";
     td.textContent = colAvg[j];
     tr.appendChild(td);
-  }
+    arr[4] = colAvg;
+      }
 
   table.appendChild(tr);
 
   console.log(tr)
   console.log(arr)
- 
 
   document.getElementById('table').appendChild(table);
 
   function getRandom() {
     return Math.round(Math.random() * 900 + 100);
   }
+
+  var x = document.querySelectorAll('.plusOne');
+  var y = document.querySelectorAll('.sumChange');
+  var z = document.querySelectorAll('.Avg');
+// var elems = document.querySelectorAll('.plusOne, .sumChange');
+
+// for (var i = 0; i < elems.length; i++) {
+//   elems[i].addEventListener("click", highlightThis);
+// }
+// function highlightThis() {
+//   this.innerHTML++;
+// }
 
   // function addToCell(e) {
   //   this.arr.length++;
@@ -67,15 +79,18 @@ function matrix(m, n) {
 //         e.target.textContent++;// = parseInt(e.target.textContent) + 1;
 //     } 
     
-// }
-// var events = {
-//     addCellHandler: function () {
-//         var allTd = [...document.querySelectorAll('td')];
-//         for(var i=0; i<allTd.length; i++){
-//             allTd[i].addEventListener('click', addToCell)
-//         }
-//     }
-// };
+// 
+//function addToCell() {
+//  document.querySelectorAll(".plusOne");
+//}
+//var events = {
+//    addCellHandler: function () {
+//        var allTd = [...document.querySelectorAll('td')];
+//        for(var i=0; i<allTd.length; i++){
+//            allTd[i].addEventListener('click', addToCell)
+//        }
+//   }
+//};
 
 // events.addCellHandler();
 
