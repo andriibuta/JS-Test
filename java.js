@@ -59,7 +59,7 @@ function matrix(m, n) {
           arr[0][0] += 1;
         }
     }
-  tr.appendChild(td); 
+   
 
   
   
