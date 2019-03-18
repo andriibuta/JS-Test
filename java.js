@@ -14,12 +14,13 @@ function matrix(m, n) {
 
     for (var j = 0; j < n; j++) {
       var td = document.createElement('td');
-      td.id = "Id-" + i + "-" + j;
+      td.id = + i + "-" + j;
       td.className = "plusOne";
       td.textContent = arr[i][j] = getRandom();
       tr.appendChild(td);
       summM += arr[i][j];
       colAvg[j] += Math.round(arr[i][j] / colAvg.length);
+
     }
       for (var j = 0; j < 1 ; j++) {
         td = document.createElement('td');
@@ -28,7 +29,6 @@ function matrix(m, n) {
         tr.appendChild(td);
         arr[i].push(summM);
   }
-    
     table.appendChild(tr);
     console.log(tr)
   }
@@ -48,15 +48,26 @@ function matrix(m, n) {
   console.log(tr)
   console.log(arr)
 
-  document.getElementById('table').appendChild(table);
+  document.getElementById('myTable').appendChild(table);
 
   function getRandom() {
-    return Math.round(Math.random() * 900 + 100);
+    return Math.round(Math.random() * 900 + 99);
   }
+  
+  myTable.onclick = function(e){
+        if(e.target.id) {
+          arr[0][0] += 1;
+        }
+    }
+  tr.appendChild(td); 
 
-  var x = document.querySelectorAll('.plusOne');
-  var y = document.querySelectorAll('.sumChange');
-  var z = document.querySelectorAll('.Avg');
+  
+  
+
+
+
+  // document.getElementById("table").addEventListener("click", function(e) {e.target.textContent++}, false);
+
 // var elems = document.querySelectorAll('.plusOne, .sumChange');
 
 // for (var i = 0; i < elems.length; i++) {
@@ -76,23 +87,23 @@ function matrix(m, n) {
 //         var clickedRow = document.getElementById(e.target.id).closest('tr');
 //         var clickedRowSum = clickedRow.getElementsByClassName('sumChange')[0];
 //         clickedRowSum.textContent++;
-//         e.target.textContent++;// = parseInt(e.target.textContent) + 1;
+//         e.target.innerHTML++;// = parseInt(e.target.textContent) + 1;
 //     } 
     
-// 
-//function addToCell() {
-//  document.querySelectorAll(".plusOne");
-//}
-//var events = {
-//    addCellHandler: function () {
-//        var allTd = [...document.querySelectorAll('td')];
-//        for(var i=0; i<allTd.length; i++){
-//            allTd[i].addEventListener('click', addToCell)
-//        }
-//   }
-//};
 
-// events.addCellHandler();
+//   function addToCell() {
+//    document.querySelectorAll(".plusOne");
+//   }
+//   var events = {
+//      addCellHandler: function () {
+//          var allTd = [...document.querySelectorAll('td')];
+//          for(var i=0; i<allTd.length; i++){
+//              allTd[i].addEventListener('click', addToCell)
+//          }
+//     }
+//   }
+//   events.addCellHandler();
+// };
 
 //Плюсует единицу но не изменяется сумма и среднее.             
   // var a = document.querySelectorAll('.plusOne');
