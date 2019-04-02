@@ -7,16 +7,17 @@
     console.log(i, j)
     sumArr[i] += 1;
     arr[i][j] += 1;
+    colAvg[j] += Math.round(arr[i][j] / colAvg.length);
     console.log(sumArr)
-    document.getElementById(i + "-" + j).textContent = arr[i][j]
+    console.log(colAvg)
+    document.getElementById(i + "-" + j).textContent = arr[i][j];
     document.getElementsByClassName('sumChange')[i].textContent = sumArr[i];
-    colAvg[j] += Math.round(arr[i][j] / colAvg);
+    document.getElementsByClassName('Avg')[j].textContent = colAvg[j];
   }
 
   for (var j = 0; j < n; j++) {
     colAvg[j] = 0;
   }
-
   for (let i = 0; i < m; i++) {
     var tr = document.createElement('tr');
     arr[i] = [];
@@ -56,6 +57,7 @@
     tr.appendChild(td);
     colAvg;
     }
+
   table.appendChild(tr);
   console.log(colAvg)
 
