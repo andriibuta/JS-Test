@@ -23,10 +23,6 @@ function matrix(m, n, x) {
       document.getElementsByClassName('Avg')[j].textContent = colAvg[j];
     }
 
-    function addClass() {
-      this.classList.add('highlighted');
-    }   
-
     for (var j = 0; j < n; j++) {
       colAvg[j] = 0;
       var sumCol = 0;
@@ -99,6 +95,18 @@ function matrix(m, n, x) {
       return newA;
     }
     console.log(diff(oneLevArr))
+
+    min = diff(oneLevArr)[0];
+    for (i = 0; i < diff(oneLevArr).length; i++) {
+        if (diff(oneLevArr)[i] < min) {
+        min = diff(oneLevArr)[i];
+      }
+    }
+    console.log(min)
+
+    function addClass() {
+      this.classList.toggle('highlighted');
+    }   
     
     document.getElementById('myTable').appendChild(table);
   
