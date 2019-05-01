@@ -1,94 +1,121 @@
-  function matrix(m, n) {
-  var table = document.createElement('table');
-  var arr = [];
-  var colAvg = [];
-  var sumArr = [];
-  const changeValues = (i, j) => {
-    console.log(i, j)
-    sumArr[i] += 1;
-    arr[i][j] += 1;
-    var resRow = []
+function matrix(m, n, x) {
+    const table = document.createElement('table');
+    const arr = [];
+    const colAvg = [];
+    const sumArr = [];
+    const changeValues = (i, j) => {
+      console.log(i, j)
+      sumArr[i] += 1;
+      arr[i][j] += 1;
       const columns = arr[i][j];
-      for (let j = 0; j < columns; j++) {
-        var columnTotal = 0
-        for (let i = 0; i < arr.length; i++) {
-          columnTotal += arr[i][j]
+        for (let j = 0; j < columns; j++) {
+          var columnTotal = 0
+          for (let i = 0; i < arr.length; i++) {
+            columnTotal += arr[i][j]
+          }
+          colAvg[j] = columnTotal / arr.length
         }
-        colAvg[j] = columnTotal / arr.length
-      }
-    console.log(sumArr)
-    console.log(arr[i][j])
-    console.log(colAvg)
-    document.getElementById(i + "-" + j).textContent = arr[i][j];
-    document.getElementsByClassName('sumChange')[i].textContent = sumArr[i];
-    document.getElementsByClassName('Avg')[j].textContent = colAvg[j];
-  }
-
-  for (var j = 0; j < n; j++) {
-    colAvg[j] = 0;
-    var sumCol = 0;
-  }
-  for (let i = 0; i < m; i++) {
-    var tr = document.createElement('tr');
-    arr[i] = [];
-    var summM = 0;
-
-    for (let j = 0; j < n; j++) {
-      var td = document.createElement('td');
-      td.id = + i + "-" + j;
-      td.className = "plusOne";
-      td.textContent = arr[i][j] = getRandom();
-      td.onclick = function () {
-        changeValues(i, j);
-      }
-      tr.appendChild(td);
-      summM += arr[i][j];
-      colAvg[j] += arr[i][j] / colAvg.length;
+      console.log(sumArr)
+      console.log(arr[i][j])
+      console.log(colAvg)
+      document.getElementById(i + "-" + j).textContent = arr[i][j];
+      document.getElementsByClassName('sumChange')[i].textContent = sumArr[i];
+      document.getElementsByClassName('Avg')[j].textContent = colAvg[j];
     }
 
-      for (var j = 0; j < 1 ; j++) {
-        td = document.createElement('td');
-        td.className = "sumChange";
-        td.textContent = summM;
+    function addClass() {
+      this.classList.add('highlighted');
+    }   
+
+    for (var j = 0; j < n; j++) {
+      colAvg[j] = 0;
+      var sumCol = 0;
+    }
+    for (let i = 0; i < m; i++) {
+      var tr = document.createElement('tr');
+      arr[i] = [];
+      var summM = 0;
+  
+      for (let j = 0; j < n; j++) {
+        var td = document.createElement('td');
+        td.id = + i + "-" + j;
+        td.className = "plusOne";
+        td.textContent = arr[i][j] = getRandom();
+
+        td.onclick = function () {
+          changeValues(i, j);
+        }  
+
+        td.onmouseover = function onMoOv() {
+            var target = event.target;
+            target.style.background = '#8888FF';
+        };
+        td.onmouseout = function onMoOut() {
+          var target = event.target;
+          target.style.background = '';
+          
+        };
         tr.appendChild(td);
-        sumArr.push(summM);
-
-  }
-    table.appendChild(tr);
-    console.log(tr)
-    console.log(sumArr)
-  }
-
-  tr = document.createElement('tr');
-  for (var j = 0; j < n ; j++) {
-    td = document.createElement('td');
-    td.className = "Avg";
-    td.textContent = colAvg[j];
-    tr.appendChild(td);
-    colAvg;
+        summM += arr[i][j];
+        colAvg[j] += arr[i][j] / colAvg.length;
+        
+      }
+  
+        for (var j = 0; j < 1 ; j++) {
+          td = document.createElement('td');
+          td.className = "sumChange";
+          td.textContent = summM;
+          tr.appendChild(td);
+          sumArr.push(summM);
+  
     }
+      table.appendChild(tr);
+      console.log(tr)
+      console.log(sumArr)
+    }
+  
+    tr = document.createElement('tr');
+    for (var j = 0; j < n ; j++) {
+      td = document.createElement('td');
+      td.className = "Avg";
+      td.textContent = colAvg[j];
+      tr.appendChild(td);
+      colAvg;
+      }
+    table.appendChild(tr);
+    console.log(colAvg)
+  
+    console.log(tr)
+    console.log(arr);
 
-  table.appendChild(tr);
-  console.log(colAvg)
+    var oneLevArr = [].concat(...arr);
+    console.log(oneLevArr);
 
-  console.log(tr)
-  console.log(arr)
-
-  document.getElementById('myTable').appendChild(table);
-
-  function getRandom() {
-    return Math.round(Math.random() * 900 + 99);
+    function diff(ary) {
+      var newA = [];
+      for (var i = 1; i < ary.length; i++){
+        newA.push(Math.abs(ary[i] - ary[i - 1]))
+      }
+      return newA;
+    }
+    console.log(diff(oneLevArr))
+    
+    document.getElementById('myTable').appendChild(table);
+  
+    function getRandom() {
+      return Math.round(Math.random() * 900 + 99);
+    }
+  
   }
-  
-}
-matrix(4, 4);
+  matrix(4, 4, 4);
 
 
+
   
 
   
-//Функция которая считает среднее для столбца и обновляет значение arr[4][i]
-//arr[i][4]
+// Функция которая считает среднее для столбца и обновляет значение arr[4][i]
+// arr[i][4]
 
 
 
@@ -186,48 +213,6 @@ matrix(4, 4);
   // });
 
 //Плюсует единицу но не изменяется сумма и среднее.             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
